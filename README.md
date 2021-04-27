@@ -63,5 +63,5 @@ To setup, follow these steps below.
 6. Set the desired soil moisture or ventilation time and watch the system do it's magic
 
 
-[demo-yt]: https://www.youtube.com/watch?v=lCdlz7tk_oI&list=PLWz5rJ2EKKc-GjpNkFe9q3DhE2voJscDT&index=1
+[demo-yt]: https://www.youtube.com/watch?v=sNo7ulwiimU
 [demo-gif]: raduApa.gif
