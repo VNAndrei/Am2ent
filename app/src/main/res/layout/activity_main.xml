@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <EditText
+        android:id="@+id/moistureValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="number"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/textView11"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/fanTimer" />
+
+    <Button
+        android:id="@+id/startFanBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Start Fan"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/textView10"
+        app:layout_constraintTop_toBottomOf="@id/textView9"
+        app:layout_constraintBottom_toTopOf="@id/setMoistureBtn"
+       />
+
+    <TextView
+        android:id="@+id/humidityTxt"
+        android:layout_width="136dp"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView7"
+        app:layout_constraintTop_toBottomOf="@id/imageView" />
+
+
+    <TextView
+        android:id="@+id/temperatureTxt"
+        android:layout_width="134dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/textView8"
+        app:layout_constraintTop_toBottomOf="@id/humidityTxt" />
+
+    <TextView
+        android:id="@+id/moistureTxt"
+        android:layout_width="134dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/textView9"
+        app:layout_constraintTop_toBottomOf="@id/temperatureTxt" />
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="81dp"
+        android:layout_height="wrap_content"
+        android:text="Humidity:"
+        app:layout_constraintEnd_toStartOf="@+id/humidityTxt"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imageView" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Temperature:"
+        app:layout_constraintEnd_toStartOf="@id/temperatureTxt"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/humidityTxt" />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Soil Moisture:"
+        app:layout_constraintEnd_toStartOf="@id/moistureTxt"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/temperatureTxt" />
+
+    <Button
+        android:id="@+id/setMoistureBtn"
+        android:layout_width="112dp"
+        android:layout_height="50dp"
+        android:text="SET"
+        app:layout_constraintTop_toBottomOf="@id/startFanBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/textView11"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:layout_editor_absoluteX="270dp"
+        tools:layout_editor_absoluteY="331dp" />
+
+    <EditText
+        android:id="@+id/fanTimer"
+        android:layout_width="139dp"
+        android:layout_height="37dp"
+
+        android:ems="10"
+        android:inputType="number"
+        app:layout_constraintBottom_toTopOf="@id/setMoistureBtn"
+        app:layout_constraintEnd_toStartOf="@id/textView10"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textView9" />
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Minutes"
+        app:layout_constraintBottom_toTopOf="@id/setMoistureBtn"
+        app:layout_constraintEnd_toStartOf="@id/startFanBtn"
+        app:layout_constraintStart_toEndOf="@id/fanTimer"
+        app:layout_constraintTop_toBottomOf="@id/textView9" />
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="%"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/setMoistureBtn"
+        app:layout_constraintStart_toEndOf="@id/moistureValue"
+        app:layout_constraintTop_toBottomOf="@id/textView10"
+        />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        app:srcCompat="@drawable/ic_plantterracotta"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/humidityTxt"
+        tools:layout_editor_absoluteX="119dp" />
+
+
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="41dp"
+        android:text="      Fan timer:"
+        app:layout_constraintBottom_toTopOf="@+id/fanTimer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="41dp"
+        android:text="      Soil moisture target:"
+        app:layout_constraintBottom_toTopOf="@+id/moistureValue"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
