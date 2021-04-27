@@ -15,6 +15,7 @@ import java.util.UUID
 
 class MainActivity : AppCompatActivity() {
     private  lateinit var client:Mqtt3AsyncClient;
+    private var config = Config();
     @RequiresApi(Build.VERSION_CODES.N)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -22,16 +23,16 @@ class MainActivity : AppCompatActivity() {
          client = MqttClient.builder()
             .useMqttVersion3()
             .identifier(UUID.randomUUID().toString())
-            .serverHost("264c16b5dc5b4b4b902292e3d2751752.s1.eu.hivemq.cloud")
-            .serverPort(8883)
+            .serverHost(config.MqttHost)
+            .serverPort(config.MqttPort)
             .sslWithDefaultConfig()
             .buildAsync()
 
 
         client.connectWith()
             .simpleAuth()
-            .username("verdes.andrei.iot")
-            .password("Andrei123".toByteArray())
+            .username(config.MqttUsername)
+            .password(config.MqttPassword.toByteArray())
             .applySimpleAuth()
             .send()
             .whenComplete { connAck: Mqtt3ConnAck?, throwable: Throwable? ->
@@ -39,7 +40,7 @@ class MainActivity : AppCompatActivity() {
                     // handle failure
                 } else {
                     client.subscribeWith()
-                        .topicFilter("am2ent/ambientValues")
+                        .topicFilter(config.topicValues)
                         .callback {publish-> messageArrived(publish) }
                         .send()
                 }
@@ -67,14 +68,14 @@ class MainActivity : AppCompatActivity() {
        setMoistureBtn.setOnClickListener {
            println(moistureTxt.text)
            client.publishWith()
-               .topic("am2ent/humidity")
+               .topic(config.topicHumidity)
                .payload(moistureValue.text.toString().toByteArray())
                .send()
            }
 
         startFanBtn.setOnClickListener {
             client.publishWith()
-                .topic("am2ent/ventilation")
+                .topic(config.topicVentilation)
                 .payload(fanTimer.text.toString().toByteArray())
                 .send()
         }
